@@ -1,86 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SnapSweep AI Privacy Policy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: Arial; padding: 20px; line-height: 1.7; max-width: 900px; margin: auto; }
-    h1, h2 { color: #1f2d3d; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal & Privacy — SnapSweep AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0f0f0f; --ink-2: #3a3a3a; --ink-3: #6b6b6b; --ink-4: #9a9a9a;
+    --surface: #fafaf8; --surface-2: #f2f1ee; --surface-3: #e8e6e1;
+    --accent: #1a6b4a; --accent-light: #e8f4ef; --accent-mid: #2d9668;
+    --border: rgba(0,0,0,0.08); --border-strong: rgba(0,0,0,0.14);
+    --radius: 12px; --radius-lg: 20px;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--surface); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+ 
+  /* HEADER */
+  .site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,250,248,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .header-inner { max-width: 860px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .logo-icon svg { width: 18px; height: 18px; fill: #fff; }
+  .logo-name { font-size: 15px; font-weight: 500; color: var(--ink); letter-spacing: -0.2px; }
+  .logo-name span { color: var(--accent); }
+  .header-badge { font-size: 12px; color: var(--ink-3); background: var(--surface-2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 20px; }
+ 
+  /* HERO */
+  .hero { max-width: 860px; margin: 0 auto; padding: 80px 24px 64px; text-align: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--accent); background: var(--accent-light); border: 1px solid rgba(26,107,74,0.2); padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(36px, 6vw, 56px); font-weight: 400; color: var(--ink); line-height: 1.12; letter-spacing: -0.8px; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc { font-size: 17px; color: var(--ink-3); max-width: 500px; margin: 0 auto 40px; line-height: 1.65; }
+ 
+  /* Trust row */
+  .trust-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 64px; }
+  .trust-pill { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--border-strong); padding: 7px 14px; border-radius: 24px; }
+  .trust-pill::before { content: '✓'; font-size: 11px; color: var(--accent); font-weight: 600; }
+ 
+  /* DOCUMENT CARDS */
+  .docs-grid { max-width: 860px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .doc-card { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 32px; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .doc-card::before { content: ''; position: absolute; inset: 0; background: var(--accent-light); opacity: 0; transition: opacity 0.2s; }
+  .doc-card:hover { border-color: rgba(26,107,74,0.35); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+  .doc-card:hover::before { opacity: 1; }
+  .doc-card > * { position: relative; }
+  .doc-icon { width: 48px; height: 48px; background: var(--accent-light); border: 1px solid rgba(26,107,74,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 22px; }
+  .doc-label { font-size: 11px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .doc-title { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--ink); letter-spacing: -0.3px; margin-bottom: 10px; line-height: 1.2; }
+  .doc-desc { font-size: 14px; color: var(--ink-3); line-height: 1.6; flex: 1; margin-bottom: 24px; }
+  .doc-meta { font-size: 12px; color: var(--ink-4); margin-bottom: 20px; }
+  .doc-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--accent); }
+  .doc-cta svg { width: 14px; height: 14px; transition: transform 0.2s; }
+  .doc-card:hover .doc-cta svg { transform: translateX(3px); }
+  .doc-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .topic-tag { font-size: 11px; color: var(--ink-3); background: var(--surface-2); border: 1px solid var(--border); padding: 3px 9px; border-radius: 10px; }
+ 
+  /* PRIVACY PRINCIPLES */
+  .principles { max-width: 860px; margin: 64px auto 0; padding: 0 24px 80px; }
+  .principles-header { text-align: center; margin-bottom: 40px; }
+  .principles-header h2 { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--ink); letter-spacing: -0.3px; margin-bottom: 8px; }
+  .principles-header p { font-size: 15px; color: var(--ink-3); }
+  .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .principle-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .principle-num { font-size: 11px; font-weight: 500; color: var(--accent); font-variant-numeric: tabular-nums; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .principle-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .principle-desc { font-size: 13.5px; color: var(--ink-3); line-height: 1.6; }
+ 
+  /* CONTACT STRIP */
+  .contact-strip { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+  .contact-inner { background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .contact-text h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
+  .contact-text p { font-size: 14px; color: var(--ink-3); }
+  .contact-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; padding: 12px 22px; border-radius: 10px; text-decoration: none; transition: all 0.15s; white-space: nowrap; }
+  .contact-btn:hover { background: var(--accent-mid); transform: translateY(-1px); }
+  .contact-btn svg { width: 15px; height: 15px; fill: #fff; }
+ 
+  /* FOOTER */
+  .footer { border-top: 1px solid var(--border); background: var(--surface-2); }
+  .footer-inner { max-width: 860px; margin: 0 auto; padding: 36px 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+  .footer-left { display: flex; flex-direction: column; gap: 5px; }
+  .footer-logo { display: flex; align-items: center; gap: 8px; }
+  .footer-logo-dot { width: 20px; height: 20px; background: var(--accent); border-radius: 5px; }
+  .footer-logo-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .footer-copy { font-size: 12px; color: var(--ink-4); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 13px; color: var(--ink-3); text-decoration: none; transition: color 0.15s; }
+  .footer-links a:hover { color: var(--accent); }
+ 
+  @media (max-width: 640px) {
+    .docs-grid { grid-template-columns: 1fr; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .contact-inner { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 36px; }
+  }
+ 
+  /* Animations */
+  .doc-card, .principle-card { opacity: 0; transform: translateY(20px); animation: fadeUp 0.5s ease forwards; }
+  .doc-card:nth-child(1) { animation-delay: 0.1s; }
+  .doc-card:nth-child(2) { animation-delay: 0.2s; }
+  .principle-card:nth-child(1) { animation-delay: 0.1s; }
+  .principle-card:nth-child(2) { animation-delay: 0.18s; }
+  .principle-card:nth-child(3) { animation-delay: 0.26s; }
+  .principle-card:nth-child(4) { animation-delay: 0.34s; }
+  .principle-card:nth-child(5) { animation-delay: 0.42s; }
+  .principle-card:nth-child(6) { animation-delay: 0.50s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+</style>
 </head>
 <body>
-
-<h1>Privacy Policy – SnapSweep AI</h1>
-<p><strong>Last Updated:</strong> 2026</p>
-
-<p>SnapSweep AI ("we", "our", "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
-
-<h2>1. Overview</h2>
-<p>SnapSweep AI is designed to clean and organize your device storage. Core processing happens locally on your device.</p>
-
-<h2>2. Data We Do NOT Collect</h2>
-<ul>
-<li>Photos or videos are NOT uploaded to our servers</li>
-<li>No personal media content is stored externally</li>
-</ul>
-
-<h2>3. On-Device Processing</h2>
-<p>All image analysis and classification are performed locally on your device using AI models.</p>
-
-<h2>4. Data We Collect</h2>
-<ul>
-<li><strong>App Activity:</strong> Feature usage, interactions</li>
-<li><strong>Device Identifiers:</strong> Advertising ID</li>
-<li><strong>Diagnostics:</strong> Crash logs (Crashlytics)</li>
-</ul>
-
-<h2>5. How We Use Data</h2>
-<ul>
-<li>Improve app performance</li>
-<li>Fix bugs and crashes</li>
-<li>Optimize features</li>
-<li>Provide relevant ads</li>
-</ul>
-
-<h2>6. Third-Party Services</h2>
-<ul>
-<li>Google AdMob (Advertising)</li>
-<li>Firebase Analytics (Usage analytics)</li>
-<li>Firebase Crashlytics (Crash reporting)</li>
-<li>Google Play Billing (Payments)</li>
-<li>Google Drive (Optional backup)</li>
-</ul>
-
-<h2>7. Data Sharing</h2>
-<p>We may share limited data with third-party services listed above for analytics and advertising purposes.</p>
-
-<h2>8. Google Drive Backup</h2>
-<p>Files are uploaded only if you explicitly choose backup. We do not access or store your files otherwise.</p>
-
-<h2>9. Data Retention</h2>
-<p>We do not store user media. Analytics data is retained as per Firebase policies.</p>
-
-<h2>10. User Control</h2>
-<ul>
-<li>You can revoke permissions anytime</li>
-<li>You can disable ads personalization via device settings</li>
-<li>You can uninstall the app anytime</li>
-</ul>
-
-<h2>11. Security</h2>
-<p>We implement industry-standard safeguards to protect user data.</p>
-
-<h2>12. Children’s Privacy</h2>
-<p>This app is not intended for children under 13.</p>
-
-<h2>13. International Users</h2>
-<p>Data may be processed in countries outside your region via third-party services.</p>
-
-<h2>14. Changes to Policy</h2>
-<p>We may update this policy. Updates will be posted on this page.</p>
-
-<h2>15. Contact</h2>
-<p>Email: support@snapsweep.ai</p>
-
+ 
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+      </div>
+      <span class="logo-name">SnapSweep <span>AI</span></span>
+    </a>
+    <span class="header-badge">Legal &amp; Privacy</span>
+  </div>
+</header>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Legal &amp; Privacy Centre</div>
+  <h1>Built on <em>trust</em>,<br>transparent by design</h1>
+  <p class="hero-desc">Everything you need to know about how SnapSweep AI works, what data we collect, and your rights as a user.</p>
+  <div class="trust-row">
+    <div class="trust-pill">On-device AI — photos never leave your phone</div>
+    <div class="trust-pill">No data selling, ever</div>
+    <div class="trust-pill">GDPR &amp; CCPA compliant</div>
+    <div class="trust-pill">Anonymous analytics only</div>
+  </div>
+</section>
+ 
+<!-- DOCUMENT CARDS -->
+<div class="docs-grid">
+ 
+  <a href="privacy.html" class="doc-card">
+    <div class="doc-icon">🔒</div>
+    <div class="doc-label">Privacy Policy</div>
+    <h2 class="doc-title">How we handle your data</h2>
+    <p class="doc-desc">Our complete privacy policy — what we collect, what we never collect, how we use data, and your rights under GDPR and CCPA.</p>
+    <div class="doc-topics">
+      <span class="topic-tag">Data collection</span>
+      <span class="topic-tag">On-device AI</span>
+      <span class="topic-tag">Firebase</span>
+      <span class="topic-tag">Your rights</span>
+      <span class="topic-tag">GDPR / CCPA</span>
+    </div>
+    <div class="doc-meta">Last updated: March 2026 &nbsp;·&nbsp; 13 sections</div>
+    <div class="doc-cta">
+      Read Privacy Policy
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </a>
+ 
+  <a href="terms.html" class="doc-card">
+    <div class="doc-icon">📋</div>
+    <div class="doc-label">Terms of Service &amp; EULA</div>
+    <h2 class="doc-title">Rules for using the app</h2>
+    <p class="doc-desc">Our terms of service and end user licence agreement — your rights, your responsibilities, billing terms, and what happens to your data.</p>
+    <div class="doc-topics">
+      <span class="topic-tag">Licence grant</span>
+      <span class="topic-tag">Billing</span>
+      <span class="topic-tag">AI disclaimer</span>
+      <span class="topic-tag">User responsibility</span>
+      <span class="topic-tag">Governing law</span>
+    </div>
+    <div class="doc-meta">Last updated: March 2026 &nbsp;·&nbsp; 14 sections</div>
+    <div class="doc-cta">
+      Read Terms of Service
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </a>
+ 
+</div>
+ 
+<!-- PRIVACY PRINCIPLES -->
+<section class="principles">
+  <div class="principles-header">
+    <h2>Our privacy principles</h2>
+    <p>Six commitments we make to every SnapSweep AI user</p>
+  </div>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <div class="principle-num">01</div>
+      <div class="principle-title">On-device first</div>
+      <div class="principle-desc">All AI scanning runs locally using TensorFlow Lite. Your photos are never uploaded or transmitted to any server.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">02</div>
+      <div class="principle-title">Minimum data</div>
+      <div class="principle-desc">We collect only what is strictly necessary — anonymous counts and crash logs. Nothing more.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">03</div>
+      <div class="principle-title">No selling</div>
+      <div class="principle-desc">We do not sell, rent, trade, or share your personal data with third parties for commercial gain. Ever.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">04</div>
+      <div class="principle-title">You're in control</div>
+      <div class="principle-desc">You can opt out of analytics and change your ad consent preference at any time from the App's Settings.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">05</div>
+      <div class="principle-title">Transparent</div>
+      <div class="principle-desc">Every data point we collect is documented in our Privacy Policy. No hidden tracking, no secret data flows.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">06</div>
+      <div class="principle-title">Secure by design</div>
+      <div class="principle-desc">All data in transit is TLS-encrypted. Crash reporting is disabled in debug builds. We follow Android security best practices.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-inner">
+    <div class="contact-text">
+      <h3>Still have questions?</h3>
+      <p>Our team is happy to help with any privacy or legal questions about SnapSweep AI.</p>
+    </div>
+    <a href="mailto:support@snapsweep.ai" class="contact-btn">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Contact support
+    </a>
+  </div>
+</div>
+ 
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <div class="footer-logo-dot"></div>
+        <span class="footer-logo-name">SnapSweep AI</span>
+      </div>
+      <span class="footer-copy">© 2025 SnapSweep AI. All rights reserved.</span>
+    </div>
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:support@snapsweep.ai">Contact</a>
+    </div>
+  </div>
+</footer>
+ 
 </body>
 </html>
